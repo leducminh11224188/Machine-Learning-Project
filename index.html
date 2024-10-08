@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Dự đoán chỉ số AQI</title>
+</head>
+<body>
+    <h1>Dự đoán chỉ số AQI bằng mô hình học máy</h1>
+    <form action="/predict" method="POST">
+        <label>Nhập dữ liệu</label><br>
+        <input type="text" name="AQI PM2.5" placeholder="AQI PM2.5"><br>
+        <input type="text" name="AQI PM10" placeholder="AQI PM10"><br>
+        <input type="text" name="AQI CO" placeholder="AQI CO"><br>
+        <input type="text" name="AQI SO2" placeholder="AQI SO2"><br>
+        <input type="text" name="AQI NO2" placeholder="AQI NO2"><br>
+        <input type="text" name="AQI O3" placeholder="AQI O3"><br>
+        <button type="submit">Dự đoán</button>
+    </form>
+    <h2>{{ prediction_text }}</h2>
+</body>
+</html>
